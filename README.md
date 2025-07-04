@@ -1,0 +1,34 @@
+# About Tychosoft Sharper Hash
+
+The purpose of this package is to introduce consistent hashing in C# that is
+consistent with my other implementations in use in other languages. Consistent
+hashing is foundational to distributed computing and specialized data practices
+such as node assignment, table sharding, etc.
+
+Consistent hashing also has to be implimented consistently regardless of system
+platform (endianness) or language. You do not want a service that runs on a
+different endian architecture or written in another language to select nodes
+differently.
+
+I focus on two things in this library; a generic consistent hasher for reducing
+hash digests to 64 bit values using the top 8 bytes of a hash digest in big
+endian (network) byte order, and a hash ring which is often used to distribute
+services to keys. The latter has to also have identical behavior, especially
+around collissions in vnodes. This implimentation matches the C++ reference
+implimentation in ModernCLI, and my go services implimentation at
+https://gitlab.com/tychosoft/service
+
+## Dependencies
+
+Net 8 or later is required since I use sha3. Otherwise this has no direct
+external dependencies. It is only implimentation bound, to match other
+languages.
+
+## Distributions
+
+The primary means to distribute shaperhash is as a nuget package and the
+latest release should be made available thru the nuget packaging site. A
+stand-alone detached source tarball may also be produced from a repository
+checkout. It can also be possible to vendor these extensions into another
+project using git submodules.
+
