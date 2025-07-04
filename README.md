@@ -3,18 +3,19 @@
 The purpose of this package is to introduce consistent hashing in C# that is
 consistent with my other implementations in use in other languages. Consistent
 hashing is foundational to distributed computing and specialized data practices
-such as node assignment, table sharding, etc.
+such as dynamic node assignment for distributed caches and dynamic load
+balancings, table sharding, etc.
 
-Consistent hashing also has to be implimented consistently regardless of system
+Consistent hashing also has to be implemented consistently regardless of system
 platform (endianness) or language. You do not want a service that runs on a
-different endian architecture or written in another language to select nodes
-differently.
+different endian architecture or that is written in another language to select
+nodes differently.
 
 I focus on two things in this library; a generic consistent hasher for reducing
 hash digests to 64 bit values using the top 8 bytes of a hash digest in big
 endian (network) byte order, and a hash ring which is often used to distribute
-services to keys. The latter has to also have identical behavior, especially
-around collissions in vnodes. This implimentation matches the C++ reference
+services to keys. The latter must have identical behavior, especially around
+vnodes and ring collissions. This implementation matches the C++ reference
 implimentation in ModernCLI, and my go services implimentation at
 https://gitlab.com/tychosoft/service
 
