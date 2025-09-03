@@ -1,19 +1,12 @@
-# Copyright (C) 2024 Tycho Softworks.
-#
-# This file is free software; as a special exception the author gives
-# unlimited permission to copy and/or distribute it, with or without
-# modifications, as long as this notice is preserved.
-#
-# This program is distributed in the hope that it will be useful, but
-# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# Copyright (C) 2025 Tycho Softworks.
+# This code is licensed under MIT license.
 
 # Project constants
 PROJECT := Tychosoft.Hashing
 ARCHIVE := sharperhash
 VERSION := 0.0.1
 DOTNET	:= net8.0
-ORIGIN	:= :tychosoft/$(ARCHIVE)
+ORIGIN	:= :dyfet//$(ARCHIVE)
 PATH	:= $(PWD)/bin/Debug/$(DOTNET):${PATH}
 
 .PHONY: debug release publish list verify
